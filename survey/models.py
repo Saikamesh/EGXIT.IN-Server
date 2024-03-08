@@ -1,11 +1,11 @@
 from django.db import models
-
+from django.core.validators import RegexValidator
 
 # Create your models here.
 class MainReasons(models.Model):
     position: str = models.CharField(max_length=30)
     influence: str = models.JSONField(default=list)
-    additional_reflection: str = models.CharField(max_length=500, null=True)
+    additional_reflection: str = models.CharField(max_length=500, blank=True)
 
 
 class WorkExperienceMetrics(models.Model):
@@ -30,12 +30,12 @@ class WorkExperienceMetrics(models.Model):
 
 
 class AdditionalResponse(models.Model):
-    WorkExpDesc: str = models.CharField(max_length=500, null=True)
-    CollegeExpDesc: str = models.CharField(max_length=500, null=True)
+    WorkExpDesc: str = models.CharField(max_length=500, blank=True)
+    CollegeExpDesc: str = models.CharField(max_length=500, blank=True)
     InPersonInterview: str = models.CharField(max_length=3)
-    FullName: str = models.CharField(max_length=50, null=True)
-    Email: str = models.EmailField(max_length=50, null=True)
-    Phone: str = models.IntegerField(max_length=10, null=True)
+    FullName: str = models.CharField(max_length=50, blank=True)
+    Email: str = models.EmailField(max_length=50, blank=True)
+    Phone: str = models.CharField(max_length=10, blank=True, validators=[RegexValidator(r'^\d{10}$')])
     
 
 

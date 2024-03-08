@@ -53,14 +53,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# If you want to allow all origins
-CORS_ALLOW_ALL_ORIGINS = True  
+# If you want to allow all origins - NOT RECOMMENDED FOR PRODUCTION
+# CORS_ALLOW_ALL_ORIGINS = True  
 
 # If you want to allow specific origins [use same url as in frontend]
-# CORS_ALLOWED_ORIGINS = [
-#     "http://localhost:8080",
-    # "http://127.0.0.1:9000"
-# ]  
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+]  
 
 ROOT_URLCONF = "exit_form.urls"
 
