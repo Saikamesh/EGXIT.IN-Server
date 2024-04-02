@@ -1,0 +1,10 @@
+
+# User Signup
+POST http://localhost:8000/survey/signup
+Content-Type: application/json
+
+  { 
+    "email":"test@testmail.com",
+    "password":"tester"
+  }
+
